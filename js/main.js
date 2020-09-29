@@ -6,19 +6,19 @@ $(document).ready(function(){
     // Make request to Github
     $.ajax({
         url:'https://api.github.com/users/'+username,
-        // data:{
-        //   client_id:'b9315bcd5a07fcd759d8',
-        //   client_secret:'a2b698bf7e7c02f898197cf136d1a41f704ca8e4'
-        // }
+        data:{
+          client_id:'63aeb452ec91852d62ed',
+          client_secret:'80a6564c1786dec7ffeb0676c115b599b2fc8b08'
+        }
     }).done(function(user){
       $.ajax({
         url:'https://api.github.com/users/'+username+'/repos',
-        // data:{
-        //   client_id:'b9315bcd5a07fcd759d8',
-        //   client_secret:'a2b698bf7e7c02f898197cf136d1a41f704ca8e4',
+        data:{
+          client_id:'63aeb452ec91852d62ed',
+          client_secret:'80a6564c1786dec7ffeb0676c115b599b2fc8b08',
           sort: 'created: asc',
-        //   per_page: 100
-        // }
+          per_page: 100
+        }
       }).done(function(repos){
         $.each(repos, function(index, repo){
           $('#repos').append(`
